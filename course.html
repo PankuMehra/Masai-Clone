@@ -291,7 +291,10 @@
     </body>
 </html>
 <script>
-    let savedLectureArray = JSON.parse(localStorage.getItem("lectures")) || [];
+    let lec = JSON.parse(localStorage.getItem("lectures")) || [];
+    let assign = JSON.parse(localStorage.getItem("assignments")) || [];
+
+    let savedLectureArray = [...lec, ...assign]
 
     let currentName = localStorage.getItem("username");
     let currentId = localStorage.getItem("userid");
